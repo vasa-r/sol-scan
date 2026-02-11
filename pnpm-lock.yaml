@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@vnaidin/react-native-cryptocurrency-icons':
+        specifier: ^0.0.20
+        version: 0.0.20(react-native@0.81.5(@babel/core@7.29.0)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
       expo:
         specifier: ~54.0.33
         version: 54.0.33(@babel/core@7.29.0)(react-native@0.81.5(@babel/core@7.29.0)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
@@ -830,6 +833,13 @@ packages:
     resolution: {integrity: sha512-TQMCz2pFJMfpNxmSfX1VSfTjwUIFx/mL+p1bnfM1xjjdla7Z+KnGMW/EhFbpckp3LyWAH4PgOsMwOMnIN+MBFg==}
     peerDependencies:
       '@urql/core': ^5.0.0
+
+  '@vnaidin/react-native-cryptocurrency-icons@0.0.20':
+    resolution: {integrity: sha512-TyTgsaLKaZegJYrDSjFhXeD0D6YFH9z7x7Gpv5L9jtfrGi1N+9UUYTRNhTN2XeWd9G8RmmSaTXApXuayN0VAyg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
 
   '@xmldom/xmldom@0.8.11':
     resolution: {integrity: sha512-cQzWCtO6C8TQiYl1ruKNn2U6Ao4o4WBBcbL61yJl84x+j5sOWWFU9X7DpND8XZG3daDppSsigMdfAIl2upQBRw==}
@@ -3687,6 +3697,11 @@ snapshots:
     dependencies:
       '@urql/core': 5.2.0
       wonka: 6.3.5
+
+  '@vnaidin/react-native-cryptocurrency-icons@0.0.20(react-native@0.81.5(@babel/core@7.29.0)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-native: 0.81.5(@babel/core@7.29.0)(@types/react@19.1.17)(react@19.1.0)
 
   '@xmldom/xmldom@0.8.11': {}
 

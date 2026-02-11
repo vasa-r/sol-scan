@@ -55,7 +55,7 @@ export default function App() {
 const s = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: "#0a0a1a",
+    backgroundColor: "#000",
   },
   tabBar: {
     flexDirection: "row",
