@@ -44,3 +44,18 @@ export const getTxns = async (addr: string) => {
     ok: !s.err,
   }));
 };
+
+export const fetchTokenDetails = async (mint: string) => {
+  const result = await rpc("getTokenSupply", [mint]);
+  return result;
+};
+
+// const res = await fetch("https://api.mainnet-beta.solana.com", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({
+//           jsonrpc: "2.0",
+//           id: 1,
+//           method: "getTokenSupply",
+//           params: [mint],
+//         })

@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import { getBalance, getTokens, getTxns } from "@/rpcs/rpcs";
 import { short, timeAgo } from "@/utils/helpers";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 
 const WalletScreen = () => {
   const [address, setAddress] = useState("");
@@ -21,6 +22,8 @@ const WalletScreen = () => {
   const [balance, setBalance] = useState<number | null>(null);
   const [tokens, setTokens] = useState<any[]>([]);
   const [txns, setTxns] = useState<any[]>([]);
+
+  const router = useRouter();
 
   const search = async () => {
     const addr = address.trim();
@@ -103,10 +106,15 @@ const WalletScreen = () => {
               keyExtractor={(t) => t.mint}
               scrollEnabled={false}
               renderItem={({ item }) => (
-                <View style={s.row}>
+                <TouchableOpacity
+                  style={s.row}
+                  onPress={() => {
+                    router.push(`/token/${item.mint}`);
+                  }}
+                >
                   <Text style={s.mint}>{short(item.mint, 6)}</Text>
                   <Text style={s.amount}>{item.amount}</Text>
-                </View>
+                </TouchableOpacity>
               )}
             />
           </>
