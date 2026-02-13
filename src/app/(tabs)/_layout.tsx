@@ -1,7 +1,10 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 
 const TabLayout = () => {
+  const [unread, setUnread] = useState(5);
+
   return (
     <Tabs
       screenOptions={{
@@ -21,6 +24,11 @@ const TabLayout = () => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="wallet" size={size} color={color} />
           ),
+          // tabBarBadge: unread > 0 ? unread : undefined,
+          // tabBarBadgeStyle: {
+          //   backgroundColor: "red",
+          //   color: "#fff",
+          // },
         }}
       />
       <Tabs.Screen
