@@ -16,7 +16,7 @@ export const rpc = async (method: string, params: any[]) => {
 
 export const getBalance = async (addr: string) => {
   const result = await rpc("getBalance", [addr]);
-  console.log({ result });
+  // console.log({ result });
   return result.value / 1_000_000_000;
 };
 
@@ -26,7 +26,7 @@ export const getTokens = async (addr: string) => {
     { programId: "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" },
     { encoding: "jsonParsed" },
   ]);
-  console.log({ result });
+  // console.log({ result });
   return (result.value || [])
     .map((a: any) => ({
       mint: a.account.data.parsed.info.mint,
@@ -37,7 +37,7 @@ export const getTokens = async (addr: string) => {
 
 export const getTxns = async (addr: string) => {
   const sigs = await rpc("getSignaturesForAddress", [addr, { limit: 10 }]);
-  console.log({ sigs });
+  // console.log({ sigs });
   return sigs.map((s: any) => ({
     sig: s.signature,
     time: s.blockTime,
